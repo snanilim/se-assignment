@@ -1,0 +1,203 @@
+// agent create req:--------------------------------------
+{
+    "name": "agent1",
+    "creator_id": "620375b97c87aae7ecf1d787",
+    "user_id": "620375b97c87aae7ecf1d787",
+    "cmsn_rate": 2,
+    "cmsn_type": "percentage"
+}
+
+// agent create response:-----------------------------------
+{
+    "_id": "620377757c87aae7ecf1d78b",
+    "name": "agent2",
+    "creator_id": "620375b97c87aae7ecf1d787",
+    "user_id": "620375b97c87aae7ecf1d787",
+    "cmsn_rate": 2,
+    "cmsn_type": "percentage",
+    "createdAt": "2022-02-09T08:12:37.707Z",
+    "updatedAt": "2022-02-09T08:12:37.707Z",
+    "__v": 0,
+    "id": "620377757c87aae7ecf1d78b"
+}
+
+
+// club create req:--------------------------------------
+{
+    "name": "club1",
+    "creator_id": "620375b97c87aae7ecf1d787",
+    "user_id": "620375b97c87aae7ecf1d787",
+    "cmsn_rate": 2,
+    "cmsn_type": "percentage"
+}
+
+
+// club create response:-----------------------------------
+{
+    "_id": "620378277c87aae7ecf1d78c",
+    "name": "club1",
+    "creator_id": "620375b97c87aae7ecf1d787",
+    "user_id": "620375b97c87aae7ecf1d787",
+    "cmsn_rate": 2,
+    "cmsn_type": "percentage",
+    "createdAt": "2022-02-09T08:15:35.419Z",
+    "updatedAt": "2022-02-09T08:15:35.419Z",
+    "__v": 0,
+    "id": "620378277c87aae7ecf1d78c"
+}
+
+// user create request:-----------------------------------
+
+{
+    "full_name": "full_name",
+    "username": "username8",
+    "email": "email8@mail.com",
+    "phone_number": "81234562777",
+    "club_name": null,
+    "agent_name": null,
+    "password": "password",
+    "roles": ["user"]
+}
+
+// user create response:-----------------------------------
+{
+    "token": {
+        "tokenType": "Bearer",
+        "refreshToken": "6203912e26d7d9fea4091401.153d8cec1fd59dcd1fd66e79ab94803b9255e2b04924e2e83b5bfe1aca4280f641d6eac427dd1c24",
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjAzOTEyZTI2ZDdkOWZlYTQwOTE0MDEiLCJpYXQiOjE2NDQ0MDA5NDMsImV4cCI6MTY0NDQwNjk0M30.q2vzxdoe7mBt-PPxS5kxf2lV9vU3ICUrvOjQqo7zuqs",
+        "expireTime": 1653040943
+    },
+    "user": {
+        "roles": [
+            "user"
+        ],
+        "permissions": [],
+        "is_active": 1,
+        "_id": "6203912e26d7d9fea4091401",
+        "email": "email7@mail.com",
+        "password": "$2a$10$KXGi2E0MpbAyx30GXYWXke3ug5JMqRHl.N3uyapjUAeYdZXETc2G.",
+        "full_name": "full_name",
+        "username": "username7",
+        "phone_number": "11234562777",
+        "club_name": null,
+        "agent_name": null,
+        "createdAt": "2022-02-09T10:02:22.986Z",
+        "updatedAt": "2022-02-09T10:02:22.986Z",
+        "__v": 0,
+        "id": "6203912e26d7d9fea4091401"
+    },
+    "result": "success"
+}
+
+// user create request:-----------------------------------
+{
+    "full_name": "full_name",
+    "username": "username8",
+    "email": "email8@mail.com",
+    "phone_number": "81234562777",
+    "club_name": "club1",
+    "agent_name": "agent2",
+    "password": "password",
+    "roles": ["user"]
+}
+// user create response:-----------------------------------
+{
+    "token": {
+        "tokenType": "Bearer",
+        "refreshToken": "6203917026d7d9fea4091403.4a075d93e368651be7067c8fddc7542e888538e83a20dd170255543985a764540405c652977dbef5",
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjAzOTE3MDI2ZDdkOWZlYTQwOTE0MDMiLCJpYXQiOjE2NDQ0MDEwMDgsImV4cCI6MTY0NDQwNzAwOH0.rXwJBWpw_kcq9AW7mOSjYcTOMY5HvunSXL3-P-otBZw",
+        "expireTime": 1653041008
+    },
+    "user": {
+        "roles": [
+            "user"
+        ],
+        "permissions": [],
+        "is_active": 1,
+        "_id": "6203917026d7d9fea4091403",
+        "email": "email8@mail.com",
+        "password": "$2a$10$eLYZhabf2ZKoTeZYm4r9oOeEcTC4GNhfBprJykOLO5BhCP2JbozQe",
+        "full_name": "full_name",
+        "username": "username8",
+        "phone_number": "81234562777",
+        "club_name": "club1",
+        "agent_name": "agent2",
+        "createdAt": "2022-02-09T10:03:28.319Z",
+        "updatedAt": "2022-02-09T10:03:28.319Z",
+        "__v": 0,
+        "id": "6203917026d7d9fea4091403"
+    },
+    "result": "success"
+}
+
+
+
+
+
+
+
+
+
+
+localhost:3001/v1/api/gameon/add
+
+{
+    "creator_id": "6221ea4a2d122d6c2c51481c",
+    "user_id": "6221ea4a2d122d6c2c51481c",
+    "question_id": "62245e4ba124c13f9fb5269f",
+    "username": "qsadmin1",
+    "option_title": "who will win?",
+    "option_on": "bangladesh",
+    "option_ratio": 3,
+    "amount": 20
+}
+
+localhost:3001/v1/api/deposit/add
+{
+    "creator_id": "6221ea4a2d122d6c2c51481c",
+    "trace_trans_id": "asd1245",
+    "user_id": "6221ea4a2d122d6c2c51481c",
+    "payment_method": "bkash",
+    "from_number": "01298765645",
+    "to_number": "12345678987",
+    "amount": 100,
+    "trans_id": "123",
+    "personal_agent": "personal"
+}
+
+localhost:3001/v1/api/deposit/update/6225f1fee7da1a6893e8914e
+{
+    "status": "accepted"
+}
+
+localhost:3001/v1/api/match/add
+{
+    "title": "c vs d",
+    "game_type_id": "6221f53b0fcddd7d2f501bda",
+    "start_date": "2022-03-04T10:52:12.039+00:00",
+    "end_date": "2022-03-04T10:52:12.039+00:00",
+    "live_date": "2022-03-04T10:52:12.039+00:00",
+    "team_a": "bd",
+    "team_b": "aus",
+    "status": "active"
+}
+
+localhost:3001/v1/api/match/getAll?game_type_id=6221f53b0fcddd7d2f501bda
+
+localhost:3001/v1/api/matchquestion/addPermanentQns
+{
+    "game_type_id": "6221f53b0fcddd7d2f501bda",
+    "match_id": "6224434f351fbc2f7e4d50f3",
+    "creator_id": "6221da4b7e80974ad2c69673"
+}
+
+localhost:3001/v1/api/matchquestion/publishresult/6229d97a20c77a4a5e98da1d
+{
+    "is_result_pub": 1,
+    "result": "bangladesh"
+}
+
+localhost:3001/v1/api/matchquestion/changeresult/6229d97a20c77a4a5e98da1d
+{
+    "is_result_pub": 0
+}

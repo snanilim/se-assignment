@@ -1,0 +1,6 @@
+{
+    "port": 8000,
+    "version": "v1",
+    "jwtTimeExpire": 100,
+    "dbName": "node-typescript-api"
+}
