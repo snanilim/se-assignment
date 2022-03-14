@@ -84,10 +84,10 @@ export class App {
 
     async listen(port?: number, ...args) {
         await this.init();
-        port = 3001;
+        port = 8001;
 
         await this.listenAsync(port, args);
-        this.logger.log('server start at port 3001');
+        this.logger.log('server start at port 8001');
 
         return this.httpServer;
     }

@@ -8,7 +8,7 @@ const schemaOptions = {
 };
 
 const addSchema = mongoose.Schema({
-    point_ratio: {
+    point_ratio: { // how many point you want to give in 100tk purchase
         type: Number,
         Tim: true
     },

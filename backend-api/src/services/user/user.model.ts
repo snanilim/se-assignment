@@ -56,19 +56,9 @@ userSchema.statics = {
         try {
             const updateInfo = {
                 email: data.email,
-                password: data.password,
                 full_name: data.full_name,
                 username: data.username,
                 mobile_number: data.mobile_number,
-                role: data.role,
-                permission: data.permission,
-                img_src: data.img_src,
-                club_id: data.club_id,
-                sponsor_username: data.sponsor_username,
-                is_active: data.is_active,
-                deleted: data.deleted,
-                balance: data.balance,
-                ratio: data.ratio,
             };
             const newObj = Object.keys(updateInfo)
             .filter(key => updateInfo[key] !== undefined)
