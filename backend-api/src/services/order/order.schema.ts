@@ -20,7 +20,7 @@ const addSchema = mongoose.Schema({
         type: String,
         Tim: true
     },
-    price:{
+    price: {
         type: Number,
         Tim: true
     }

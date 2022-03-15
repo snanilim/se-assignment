@@ -4,21 +4,16 @@ import { APIError } from '../../core';
 import { identity } from 'rxjs';
 import addSchema from './transection.schema';
 
-
 addSchema.statics = {
     async add(data) {
         // console.log(data);
         try {
             const addInfo = {
-                creator_id: data.creator_id,
-                updateor_id: data.updateor_id,
-                trans_type: data.trans_type,
                 trace_trans_id: data.trace_trans_id,
+                user_id: data.user_id,
+                point_ratio: data.point_ratio,
+                point_in_tk_ratio: data.point_in_tk_ratio,
                 amount: data.amount,
-                for_admin: data.for_admin,
-                for_user: data.for_user,
-                for_lab: data.for_lab,
-                for_com: data.for_com,
             };
             const add = new this(addInfo);
             const info = await add.save();
@@ -36,10 +31,6 @@ addSchema.statics = {
                 trans_type: data.trans_type,
                 trace_trans_id: data.trace_trans_id,
                 amount: data.amount,
-                for_admin: data.for_admin,
-                for_user: data.for_user,
-                for_lab: data.for_lab,
-                for_com: data.for_com,
             };
 
             const newObj = Object.keys(updateInfo)
@@ -51,8 +42,6 @@ addSchema.statics = {
                 obj[key] = updateInfo[key];
                 return obj;
             }, {});
-
-
             const info = await this.updateOne({ _id: id }, newObj );
             return {data: info};
         } catch (err) {
@@ -97,10 +86,10 @@ addSchema.statics = {
     },
 
     async getAll({
-        page = 1, perPage = 20,  creator_id, updateor_id, trans_type, trace_trans_id, amount, for_admin, for_user, for_lab, for_com
+        page = 1, perPage = 20,  trace_trans_id, user_id
     }) {
         // console.log("id", user_id)
-        const queryObj = {  creator_id, updateor_id, trans_type, trace_trans_id, amount, for_admin, for_user, for_lab, for_com };
+        const queryObj = {  trace_trans_id, user_id };
         const findQuery = Object.keys(queryObj)
             .filter(key => queryObj[key] !== undefined)
             .filter(key => queryObj[key] !== 'null')
@@ -129,7 +118,6 @@ addSchema.statics = {
         } catch (error) {
             throw error;
         }
-        
     },
 
     async addInValue(id, value){
@@ -139,7 +127,6 @@ addSchema.statics = {
         } catch (error) {
             throw error;
         }
-        
     }
 };
 

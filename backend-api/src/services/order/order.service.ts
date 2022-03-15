@@ -1,17 +1,31 @@
 import Order from './order.model';
+import Settings from '../settings/settings.model';
+import CTransection from '../cTransection/transection.model';
+
 
 export const add = async (data) => {
     try {
-        const resAdd = await Order.add(data);
-        // Add order
+        console.log("data", data);
+        // check slab
+        const settingsInfo = await Settings.getOne('622eddc3461c99340fd0c670');
+        console.log("settingsInfo", settingsInfo);
 
-        // order history
+        // Add order
+        let orderdata = {};
+        orderdata.
+        const resOrder = await Order.add(orderdata);
+
+        // transection history
+        let transdata = {};
+        transdata.
+        const resTrans = await CTransection.add(transdata);
 
         // user commission
+        let transdata = {};
+        transdata.
+        const resTrans = await CTransection.add(transdata);
 
-        // check slab 
-
-        return resAdd;
+        // return resAdd;
     } catch (error) {
         throw error;
     }
