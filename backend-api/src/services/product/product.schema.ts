@@ -15,6 +15,10 @@ const addSchema = mongoose.Schema({
     price:{
         type: Number,
         Tim: true
+    },
+    img_url:{
+        type: String,
+        Tim: true
     }
 }, schemaOptions);
 

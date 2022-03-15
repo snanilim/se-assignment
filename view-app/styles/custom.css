@@ -1,0 +1,16 @@
+.ant-divider-inner-text {
+    display: inline-block;
+    padding: 0px 5px 0 0;
+}
+
+.ant-divider-horizontal.ant-divider-with-text-left::before {
+    width: 0%;
+}
+
+.add-product{
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}

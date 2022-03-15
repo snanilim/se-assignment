@@ -49,13 +49,12 @@ const HomeLayout = ({ header, children }) => {
             </Menu>
             </Sider>
             <Layout className="site-layout">
-            <Header className="site-layout-background" style={{ padding: 0 }} />
-            <Content style={{ margin: '0 16px' }}>
+            <Content>
                 {/* <Breadcrumb style={{ margin: '16px 0' }}>
                 <Breadcrumb.Item>User</Breadcrumb.Item>
                 <Breadcrumb.Item>Bill</Breadcrumb.Item>
                 </Breadcrumb> */}
-                <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+                <div className="site-layout-background" style={{ minHeight: 360 }}>
                 {children}
                 </div>
             </Content>

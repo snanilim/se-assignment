@@ -3,6 +3,14 @@ import Order from './order.model';
 export const add = async (data) => {
     try {
         const resAdd = await Order.add(data);
+        // Add order
+
+        // order history
+
+        // user commission
+
+        // check slab 
+
         return resAdd;
     } catch (error) {
         throw error;

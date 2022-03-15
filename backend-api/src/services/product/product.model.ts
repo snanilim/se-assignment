@@ -10,9 +10,9 @@ addSchema.statics = {
         // console.log(data);
         try {
             const addInfo = {
-                user_id: data.user_id,
-                point: data.point,
-                point_in_tk: data.point_in_tk,
+                name: data.name,
+                price: data.price,
+                img_url: data.img_url
             };
             const add = new this(addInfo);
             const info = await add.save();
@@ -25,9 +25,9 @@ addSchema.statics = {
     async update(data, id) {
         try {
             const updateInfo = {
-                user_id: data.user_id,
-                point: data.point,
-                point_in_tk: data.point_in_tk,
+                name: data.name,
+                price: data.price,
+                img_url: data.img_url
             };
 
             const newObj = Object.keys(updateInfo)
@@ -85,10 +85,10 @@ addSchema.statics = {
     },
 
     async getAll({
-        page = 1, perPage = 20,  creator_id, updateor_id, trans_type, trace_trans_id, amount, for_admin, for_user, for_lab, for_com
+        page = 1, perPage = 20,  name
     }) {
         // console.log("id", user_id)
-        const queryObj = {  creator_id, updateor_id, trans_type, trace_trans_id, amount, for_admin, for_user, for_lab, for_com };
+        const queryObj = {  name };
         const findQuery = Object.keys(queryObj)
             .filter(key => queryObj[key] !== undefined)
             .filter(key => queryObj[key] !== 'null')
