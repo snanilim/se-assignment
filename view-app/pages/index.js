@@ -62,9 +62,11 @@ export default function Home({ initialPosts }) {
       <Card style={{ minHeight: '100vh' }}>
         <UserSeclect action={childHandler} commissionValue={commissionValue} />
         
-
+        
         <Row gutter={16}>
+        
           <Col className="gutter-row" span={24}>
+          <h2 style={{ position: "relative", top: 40, marginTop: 10, left: 40 }}>Products</h2>
             <div>
               <Products action={childHandler2} allItems={productState} userId={userIdState}/>
             </div>

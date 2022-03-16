@@ -1,6 +1,9 @@
 import { Select } from 'antd';
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Divider } from 'antd';
+import { Typography, Space } from 'antd';
+
+const { Text, Link } = Typography;
 
 const { Option } = Select;
 
@@ -28,8 +31,9 @@ export default function UserSeclect(props) {
     }
     return (
         <>
+            <h2 style={{ left: 40, position: "relative" }}>Select a user</h2>
             <Row gutter={16}>
-                <Col className="gutter-row" span={12}>
+                <Col className="gutter-row" span={11} offset={1}>
                     <div>
                         <Select style={{ width: 300 }} defaultValue="select" onChange={onChange}>
                             <Option value="select">Select A User</Option>
@@ -42,13 +46,13 @@ export default function UserSeclect(props) {
                     </div>
                 </Col>
                 <Col className="gutter-row" span={4}>
-                    <div>Point: {props.commissionValue.point}</div>
+                    <div><h3> Point: <Text type="success">{props.commissionValue.point}</Text></h3></div>
                 </Col>
                 <Col className="gutter-row" span={4}>
-                    <div>Taka: {props.commissionValue.point_in_tk} </div>
+                    <div><h3>Taka: <Text type="warning">{props.commissionValue.point_in_tk}</Text> </h3></div>
                 </Col>
                 <Col className="gutter-row" span={4}>
-                    <div>Type: {props.commissionValue.user_type}</div>
+                    <div><h3>Type: <Text type="danger">{props.commissionValue.user_type}</Text></h3></div>
                 </Col>
             </Row>
 
