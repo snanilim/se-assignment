@@ -29,6 +29,7 @@ export default function Settings({ initialPosts, oneItem }) {
     const response = await fetch(url, { method: 'POST', body:data, headers });
     const resData = await response.json();
     console.log("resData", resData)
+    alert("Settings Update Successfully")
   }
 
   return (

@@ -2,6 +2,7 @@ import * as moment from 'moment';
 import * as config from 'config';
 import User from '../user/user.model';
 import RefreshToken from './refreshToken';
+import userCommission from '../userCommission/commission.model';
 
 const generateToken = (user, accessToken) => {
     try {
@@ -29,6 +30,7 @@ export const register = async (data) => {
             mobile_number: data.mobile_number,
         });
         const resSaveUser = await user.save();
+        const resCommissionUser = await userCommission.add({user_id: resSaveUser.id})
         const fullData = {
             user: resSaveUser,
         };

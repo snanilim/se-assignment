@@ -14,11 +14,18 @@ const addSchema = mongoose.Schema({
     },
     point: {
         type: Number,
-        Tim: true
+        Tim: true,
+        default: 0
     },
     point_in_tk:{
         type: Number,
-        Tim: true
+        Tim: true,
+        default: 0
+    },
+    user_type:{
+        type: String,
+        trim: true,
+        default: "starter"
     }
 }, schemaOptions);
 

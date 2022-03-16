@@ -11,6 +11,8 @@ import { SetStateAction, useState } from 'react'
 
 export default function Home({ initialPosts }) {
   const [productState, setProductState] = useState(initialPosts);
+  const [userIdState, setUserIdState] = useState("select");
+  const [commissionValue, setCommissionValue] = useState({point: "", point_in_tk:"", user_type: ""})
 
   const getAllData = async () => {
     const url = `http://localhost:3000/api/product/all`;
@@ -25,6 +27,29 @@ export default function Home({ initialPosts }) {
       resData.data
     )
   }
+
+  const childHandler = async (value) => {
+    setUserIdState(value)
+    if (value == "select"){
+      setCommissionValue(
+          commissionValue = {point: "", point_in_tk:"", user_type: ""}
+      )
+    }else{
+      console.log("value", value)
+
+      const res = await fetch(`http://localhost:3000/api/commission/${value}`)
+      const allUser = await res.json()
+      console.log("allUser", allUser)
+      setCommissionValue(
+          commissionValue = allUser.data
+      )
+    }
+  }
+
+  const childHandler2 = async (value) => {
+    await childHandler(value)
+  }
+
   return (
     <HomeLayout>
     <div>
@@ -35,25 +60,13 @@ export default function Home({ initialPosts }) {
       </Head>
 
       <Card style={{ minHeight: '100vh' }}>
-
-        <Row gutter={16}>
-          <Col className="gutter-row" span={12}>
-            <div>
-              <UserSeclect />
-            </div>
-          </Col>
-          <Col className="gutter-row" span={6}>
-            <div>col-6</div>
-          </Col>
-          <Col className="gutter-row" span={6}>
-            <div>col-6</div>
-          </Col>
-        </Row>
+        <UserSeclect action={childHandler} commissionValue={commissionValue} />
+        
 
         <Row gutter={16}>
           <Col className="gutter-row" span={24}>
             <div>
-              <Products allItems={productState} />
+              <Products action={childHandler2} allItems={productState} userId={userIdState}/>
             </div>
           </Col>
         </Row>

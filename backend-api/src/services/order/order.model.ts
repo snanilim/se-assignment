@@ -10,9 +10,10 @@ addSchema.statics = {
         // console.log(data);
         try {
             const addInfo = {
-                user_id: data.user_id,
-                point: data.point,
-                point_in_tk: data.point_in_tk,
+                user_id: data. user_id,
+                trace_trans_id: data.trace_trans_id,
+                product_id: data.product_id,
+                price: data.price,
             };
             const add = new this(addInfo);
             const info = await add.save();
@@ -25,9 +26,10 @@ addSchema.statics = {
     async update(data, id) {
         try {
             const updateInfo = {
-                user_id: data.user_id,
-                point: data.point,
-                point_in_tk: data.point_in_tk,
+                user_id: data. user_id,
+                trace_trans_id: data.trace_trans_id,
+                product_id: data.product_id,
+                price: data.price,
             };
 
             const newObj = Object.keys(updateInfo)

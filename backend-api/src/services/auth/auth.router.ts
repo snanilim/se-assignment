@@ -1,5 +1,5 @@
 import { MainRouter } from '../../core/app/main.router';
-import { getAll, getOne, update } from './auth.controller';
+import { getAll, register, getOne, update } from './auth.controller';
 
 export class AuthRouter extends MainRouter{
     constructor(){
@@ -7,6 +7,7 @@ export class AuthRouter extends MainRouter{
     }
 
     onInit(): void {
+        this.router.route('/register').post(register);
         this.router.route('/getAll').get(getAll);
         this.router.route('/getOneUser/:id').get(getOne);
         this.router.route('/update/:id').post(update);

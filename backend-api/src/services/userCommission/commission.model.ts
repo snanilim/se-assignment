@@ -13,6 +13,7 @@ addSchema.statics = {
                 user_id: data.user_id,
                 point: data.point,
                 point_in_tk: data.point_in_tk,
+                user_type: data.user_type
             };
             const add = new this(addInfo);
             const info = await add.save();
@@ -28,6 +29,7 @@ addSchema.statics = {
                 user_id: data.user_id,
                 point: data.point,
                 point_in_tk: data.point_in_tk,
+                user_type: data.user_type
             };
 
             const newObj = Object.keys(updateInfo)
@@ -41,7 +43,7 @@ addSchema.statics = {
             }, {});
 
 
-            const info = await this.updateOne({ _id: id }, newObj );
+            const info = await this.updateOne({ user_id: id }, newObj );
             return {data: info};
         } catch (err) {
             throw new APIError(err);
@@ -68,7 +70,7 @@ addSchema.statics = {
 
     async getOne(id) {
         try {
-            const info = await this.findOne({ _id: id });
+            const info = await this.findOne({ user_id: id });
             return {data: info};
         } catch (err) {
             throw new APIError(err);

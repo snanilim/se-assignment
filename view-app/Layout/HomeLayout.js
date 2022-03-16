@@ -28,7 +28,7 @@ const HomeLayout = ({ header, children }) => {
             <Menu theme="light" defaultSelectedKeys={['1']} mode="inline">
                 <Menu.Item key="1" icon={<PieChartOutlined />}>
                     <Link href={`/`}>
-                        Home
+                        Product
                     </Link>
                 </Menu.Item>
                 <Menu.Item key="2" icon={<DesktopOutlined />}>
@@ -37,13 +37,8 @@ const HomeLayout = ({ header, children }) => {
                     </Link>
                 </Menu.Item>
                 <Menu.Item key="3" icon={<DesktopOutlined />}>
-                    <Link href={`/user`}>
-                        User
-                    </Link>
-                </Menu.Item>
-                <Menu.Item key="4" icon={<DesktopOutlined />}>
-                    <Link href={`/user`}>
-                        History
+                    <Link href={`/check-history`}>
+                        Check History
                     </Link>
                 </Menu.Item>
             </Menu>

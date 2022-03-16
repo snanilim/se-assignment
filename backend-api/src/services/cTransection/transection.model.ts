@@ -86,10 +86,10 @@ addSchema.statics = {
     },
 
     async getAll({
-        page = 1, perPage = 20,  trace_trans_id, user_id
+        page = 1, perPage = 20, trace_trans_id, user_id
     }) {
         // console.log("id", user_id)
-        const queryObj = {  trace_trans_id, user_id };
+        const queryObj = { trace_trans_id, user_id };
         const findQuery = Object.keys(queryObj)
             .filter(key => queryObj[key] !== undefined)
             .filter(key => queryObj[key] !== 'null')
@@ -105,6 +105,27 @@ addSchema.statics = {
                 .skip(perPage * (page - 1))
                 .limit(perPage)
                 .exec();
+            // const info = await this.aggregate([
+            //     { $match: findQuery },
+            //     {
+            //         $lookup:
+            //             {
+            //             from: "categories",
+            //             let: { 'pid': '$category' },
+            //             pipeline: [
+            //                 { $match: { '$expr': { '$in': ['$_id', '$$pid'] } } },
+            //                 { $project: { _id: 0, date: { name: "$name", id: "$_id" } } },
+            //                 { $replaceRoot: { newRoot: "$date" } }
+            //             ],
+            //             as: "categoryObjects"
+            //             },
+                            
+            //         }
+            //     ])
+            // .sort({ createdAt: -1 })
+            // .skip(perPage * (page - 1))
+            // .limit(perPage)
+            // .exec();
             return {data: info};
         } catch (error) {
             return error;

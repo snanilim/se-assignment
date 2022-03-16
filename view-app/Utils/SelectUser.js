@@ -1,11 +1,13 @@
 import { Select } from 'antd';
 import React, { useState, useEffect } from 'react';
+import { Row, Col, Divider } from 'antd';
 
 const { Option } = Select;
 
 export default function UserSeclect(props) {
 
     const [userValue, setUserValue] = useState([{id: "0", name: "all"}])
+    
     useEffect( ()  => {
         async function fetchMyAPI() {
             console.log("call letter")
@@ -18,22 +20,38 @@ export default function UserSeclect(props) {
             )
         }
         fetchMyAPI()
-      }, []);
-    const onChange = (value) => {
-        console.log("value", value)
-        const arrValue = [value]
-        props.action({ category: arrValue });
+    }, []);
+
+    const onChange = async (value) => {
+        // const arrValue = [value]
+        props.action(value);
     }
     return (
         <>
-            <Select style={{ width: 300 }} defaultValue="select">
-                <Option value="select">Select A User</Option>
-                {
-                    userValue.map(i => {
-                    return <Option value={`${i.username}`}>{i.username}</Option>
-                    })
-                }
-            </Select>
+            <Row gutter={16}>
+                <Col className="gutter-row" span={12}>
+                    <div>
+                        <Select style={{ width: 300 }} defaultValue="select" onChange={onChange}>
+                            <Option value="select">Select A User</Option>
+                            {
+                                userValue.map(i => {
+                                return <Option value={`${i.id}`}>{i.username}</Option>
+                                })
+                            }
+                        </Select>
+                    </div>
+                </Col>
+                <Col className="gutter-row" span={4}>
+                    <div>Point: {props.commissionValue.point}</div>
+                </Col>
+                <Col className="gutter-row" span={4}>
+                    <div>Taka: {props.commissionValue.point_in_tk} </div>
+                </Col>
+                <Col className="gutter-row" span={4}>
+                    <div>Type: {props.commissionValue.user_type}</div>
+                </Col>
+            </Row>
+
         </> 
     )
 }
